@@ -12,7 +12,7 @@ RSpec.describe 'When I visit /', type: :feature do
     end
 
     it 'and i should see a list with detailed information for the first 25 members of the fire nation' do
-      @fire_nation = AvatarService.avatar_objects('Fire Nation')
+      @fire_nation = AvatarsFacade.avatar_objects('Fire Nation')
       visit root_path
 
       select "Fire Nation", from: "nation"
@@ -36,7 +36,7 @@ RSpec.describe 'When I visit /', type: :feature do
       select "Fire Nation", from: "nation"
       click_on "Search For Members"
 
-      @fire_nation = AvatarService.avatar_objects('Fire Nation')
+      @fire_nation = AvatarsFacade.avatar_objects('Fire Nation')
 
       within "#avatar-#{@fire_nation.first.id}" do
         expect(page).to have_content('Chan (Fire Nation admiral)')

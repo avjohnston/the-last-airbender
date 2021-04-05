@@ -2,8 +2,6 @@ class Avatar
   attr_reader :id,
               :name,
               :photo_link,
-              :allies,
-              :enemies,
               :affiliations
 
   def initialize(data)

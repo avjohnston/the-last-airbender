@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   def index
-    @avatars = AvatarService.avatar_objects(params[:nation])
-    @avatar_count = AvatarService.all_members_get(params[:nation]).size
+    @avatars = AvatarsFacade.avatar_objects(params[:nation])
+    @avatar_count = AvatarsFacade.nation_size(params[:nation])
   end
 end
