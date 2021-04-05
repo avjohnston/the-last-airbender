@@ -1,5 +1,5 @@
 <h1><%= params[:nation].gsub('_', ' ').titleize %></h1>
-
+<h3>Total Members: <%= @avatar_count %></h3>
 <% @avatars.each do |av| %>
 <div id="avatar-<%= av.id %>" style="border:solid;padding: 5px;margin: 5px">
   <img src="<%= av.photo_link %>" alt="<%= av.name %>"><br>
