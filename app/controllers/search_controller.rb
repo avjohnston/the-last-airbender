@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
   def index
-    @avatars = AvatarService.nation_get(params[:nation])
+    @avatars = AvatarService.avatar_objects(params[:nation])
   end
 end

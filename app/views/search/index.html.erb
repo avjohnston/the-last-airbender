@@ -1,1 +1,17 @@
-<%= @avatars %>
+<h1><%= params[:nation].gsub('_', ' ').titleize %></h1>
+
+<% @avatars.each do |av| %>
+<div id="avatar-<%= av.id %>" style="border:solid;padding: 5px;margin: 5px">
+  <img src="<%= av.photo_link %>" alt="<%= av.name %>"><br>
+  Name: <%= av.name %><br>
+  Allies:
+  <% av.allies.each do |ally| %>
+    <%= ally %><br>
+  <% end %>
+  Enemies:
+  <% av.enemies.each do |enemy| %>
+    <%= enemy %><br>
+  <% end %>
+  Affiliation: <%= av.affiliations %><br>
+</div>
+<% end %>
