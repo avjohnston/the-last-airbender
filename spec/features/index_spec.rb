@@ -12,7 +12,7 @@ RSpec.describe 'When I visit /', type: :feature do
     end
 
     it 'and i should see a list with detailed informnation for the first 25 members of the fire nation' do
-
+      expect(page).to have_content('Fire Nation')
     end
 
     it 'and for each member i hsould see all of their attributes' do

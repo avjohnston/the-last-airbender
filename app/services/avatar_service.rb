@@ -1,8 +1,13 @@
 class AvatarService
-  def self.nation_get(affiliation)
-    response = conn.get('characters') do |f|
-      f.params['affiliation'] = affiliation.gsub('_', '+')
+  def self.get_members
+    response = conn.get("characters") do |request|
+      request.params['character_id']
     end
+    json = JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.nation_get(nation)
+    response = conn.get("characters?affiliation=#{nation.gsub('_', '+')}")
     json = JSON.parse(response.body, symbolize_names: true)
   end
 
