@@ -5,8 +5,7 @@ class AvatarsFacade
     end
   end
 
-
-    def self.nation_size(nation)
-      AvatarService.all_members_get(nation).size
-    end
+  def self.nation_size(nation)
+    AvatarService.all_members_get(nation).size
+  end
 end

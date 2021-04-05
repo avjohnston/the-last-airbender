@@ -16,4 +16,9 @@ RSpec.describe AvatarsFacade, type: :model do
     expect(@avatar.allies.first.class).to eq(String)
     expect(@avatar.affiliations.class).to eq(String)
   end
+
+  it 'nation size returns the amount of avatars in the nation' do
+    expect(AvatarsFacade.nation_size('Fire Nation')).to eq(97)
+    expect(AvatarsFacade.nation_size('Air Nomads')).to eq(15)
+  end
 end

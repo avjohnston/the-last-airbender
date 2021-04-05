@@ -23,7 +23,6 @@ RSpec.describe 'When I visit /', type: :feature do
       expect(@fire_nation.size).to eq(25)
 
       within "#avatar-#{@fire_nation.first.id}" do
-        expect(page).to have_content('Name:')
         expect(page).to have_content('Allies:')
         expect(page).to have_content('Enemies:')
         expect(page).to have_content('Affiliation:')
